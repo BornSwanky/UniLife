@@ -10,3 +10,9 @@ UniLife is an innvation that is designed to enhance university experiences by pr
 ## Documentation
 
 Refer to the UI images and the video for the demo. JamAI API is needed to run this program in Python
+## Technology Stack
+
+- Backend: Python, JamAI Base (LLM)
+- Frontend: Python
+- UI Design: Figma
+- Prototyping: Streamlit
