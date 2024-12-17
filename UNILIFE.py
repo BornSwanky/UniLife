@@ -125,7 +125,7 @@ def events_page(user_programme):
                     unsafe_allow_html=True)
 
         # Create side-by-side columns for "Yes" and "Next"
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns([1, 1, 1])
 
         with col1:  # Left column for "Yes" button
             if st.button("Yes", key="event_yes"):
@@ -133,7 +133,7 @@ def events_page(user_programme):
                 st.session_state.selected_event = current_event
                 st.session_state.page = "event_details"
 
-        with col2:  # Right column for "Next" button
+        with col3:  # Right column for "Next" button
             if st.button("Next", key="event_next"):
                 # Advance to the next event
                 st.session_state.current_event = (current_event_index + 1) % len(events)
@@ -143,10 +143,10 @@ def events_page(user_programme):
 
         # Directly set the page to "main_page" for the return button
         # Create three columns
-        col1, col2, col3 = st.columns([1, 2, 1])  # Adjust the ratios for desired widths
+        col1, col2, col3 = st.columns([1, 1, 1])  # Adjust the ratios for desired widths
 
         # Add the button in the middle column
-        with col3:
+        with col2:
             if st.button("Return", key="event_return"):
                 st.session_state.page = "main_page"
 
@@ -231,8 +231,8 @@ def competitions_page(user_programme):
             unsafe_allow_html=True
         )
 
-        # Navigation buttons with increased size
-        col1, col2 = st.columns(2)
+        # Create side-by-side columns for "Yes" and "Next"
+        col1, col2, col3 = st.columns([1, 1, 1])
 
         with col1:
             if st.button("Yes", key="yes_button"):
@@ -240,7 +240,7 @@ def competitions_page(user_programme):
                 st.session_state.selected_competition = current_competition
                 st.session_state.page = "competition_details"
 
-        with col2:
+        with col3:
             if st.button("Next", key="next_button"):
                 # Advance to the next competition
                 st.session_state.current_competition = (current_competition_index + 1) % len(competitions)
@@ -248,10 +248,10 @@ def competitions_page(user_programme):
         # Return button with increased size
         # Directly set the page to "main_page" for the return button
         # Create three columns
-        col1, col2, col3 = st.columns([1, 2, 1])  # Adjust the ratios for desired widths
+        col1, col2, col3 = st.columns([1, 1, 1])  # Adjust the ratios for desired widths
 
         # Add the button in the middle column
-        with col3:
+        with col2:
             if st.button("Return", key="event_return"):
                 st.session_state.page = "main_page"
 
